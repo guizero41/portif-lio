@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    
+    <footer>
+        <a href="https://github.com/ImTizy" target="_blank" rel="noopener noreferrer">
+            <img src="./chevron-left-solid.svg"></img>
+            <p>Voltar</p>
+    </footer>
+
+    <title>Calculo de times de basquete 3x3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .feedback {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 18px;
+        }
+        .verde {
+            color: green;
+        }
+        .vermelho {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <i class="fa-solid fa-chevron-left"></i>
+    <h1>Basquete 3x3</h1>
+    <input type="number" id="inscritos" placeholder="Inscritos" min="1">
+    <button onclick="adicionarInscrito()">Adicionar Inscrito</button>
+    <div id="resultado"></div>
+    <div id="feedback" class="feedback"></div>
+
+    <script>
+        let totalInscritos = 0;
+
+        function adicionarInscrito() {
+            const inscritosInput = document.getElementById('inscritos');
+            const inscritos = parseInt(inscritosInput.value);
+
+            if (inscritos && inscritos > 0) {
+                totalInscritos += inscritos;
+                inscritosInput.value = '';
+                calcularTimes();
+            } else {
+                alert("Por favor, insira um número válido.");
+            }
+        }
+
+        function calcularTimes() {
+            const times = Math.floor(totalInscritos / 3);
+            const sobrando = totalInscritos % 3;
+            const resultadoDiv = document.getElementById('resultado');
+            const feedbackDiv = document.getElementById('feedback');
+
+            resultadoDiv.innerHTML = `Total de times formados: ${times}`;
+            
+            if (sobrando === 0) {
+                feedbackDiv.innerHTML = "Todos os inscritos foram alocados em times!";
+                feedbackDiv.className = "feedback verde";
+            } else {
+                feedbackDiv.innerHTML = `Sobram ${sobrando} inscritos que não podem formar um time.`;
+                feedbackDiv.className = "feedback vermelho";
+            }
+        }
+    </script>
+</body>
+</html>
