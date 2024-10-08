@@ -4,13 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    
-    <footer>
-        <a href="https://github.com/ImTizy" target="_blank" rel="noopener noreferrer">
-            <img src="./chevron-left-solid.svg"></img>
-            <p>Voltar</p>
-    </footer>
-
     <title>Calculo de times de basquete 3x3</title>
     <style>
         body {
@@ -47,7 +40,7 @@
             const inscritos = parseInt(inscritosInput.value);
 
             if (inscritos && inscritos > 0) {
-                totalInscritos += inscritos;
+                totalInscritos = inscritos;
                 inscritosInput.value = '';
                 calcularTimes();
             } else {
@@ -73,4 +66,25 @@
         }
     </script>
 </body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão Voltar</title>
+</head>
+<body>
+    <h1>Bem-vindo à minha página!</h1>
+    <button id="voltarBtn">Voltar</button>
+
+    <script>
+        document.getElementById('voltarBtn').onclick = function() {
+            window.history.back();
+        };
+    </script>
+</body>
+<div class="imagem2"></div>
+
+    <img src="fundo projetos.png" alt="imagem">
 </html>
