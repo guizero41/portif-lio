@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão de Apresentação</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="cartao">
+        <div class="frente">
+            <h1 id="nome">Seu Nome</h1>
+            <p id="profissao">Sua Profissão</p>
+            <button id="ver-mais">Ver Mais</button>
+        </div>
+        <div class="verso" style="display: none;">
+            <h2>Sobre Mim</h2>
+            <p id="sobre-mim">Descreva-se em poucas linhas.</p>
+            <ul>
+                <li><strong>Telefone:</strong> <span id="telefone"></span></li>
+                <li><strong>Email:</strong> <span id="email"></span></li>
+                <li><strong>Redes Sociais:</strong> <span id="redes-sociais"></span></li>
+            </ul>
+            <button id="voltar">Voltar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
