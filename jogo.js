@@ -79,7 +79,19 @@ let cardsWon = [] //cartas combinas
 //criar o quadro de cartas
 function createBoard(){
    for(let i = 0; i < cards.length; i++){
-    const card = document
+    const card = document.createElement('img')
+    card.setAttribute('src', 'images/imagem.png');
+    card.setAttribute('data-id', i);
+    card.addEventListener('click', flipCard);
+    board.appendChild(card);
+   
    }
-}
+   }
+   function flipCard(){
+      let cardId = this.getAttribue('data-id');
+      cardsChosen.push(cards[cardId.name]);
+      cardsChosenId.push(cardId);
+      this.setAttribute('src', cards[cardId].img);
+   }
+   createBoard();
 });
